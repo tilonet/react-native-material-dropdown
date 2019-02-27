@@ -38,12 +38,12 @@ export default class DropdownItem extends PureComponent {
     return (
       <RaisedTextButton
         {...props}
-
+        title={children}
         style={[styles.container, style]}
         onPress={this.onPress}
-      >
-        {children}
-      </RaisedTextButton>
+      />
+
+
     );
   }
 }
