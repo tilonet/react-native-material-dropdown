@@ -23,6 +23,7 @@ export default class Dropdown extends PureComponent {
     hitSlop: { top: 6, right: 4, bottom: 6, left: 4 },
 
     disabled: false,
+    numberOfLines: 1,
 
     data: [],
 
@@ -583,6 +584,7 @@ export default class Dropdown extends PureComponent {
       rippleOpacity,
       rippleDuration,
       shadeOpacity,
+      numberOfLines,
     } = this.props;
 
     let props = propsExtractor(item, index);
@@ -630,7 +632,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <DropdownItem index={index} {...props}>
-        <Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={1}>
+        <Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={numberOfLines}>
           {title}
         </Text>
       </DropdownItem>
