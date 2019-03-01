@@ -23,7 +23,6 @@ export default class Dropdown extends PureComponent {
     hitSlop: { top: 6, right: 4, bottom: 6, left: 4 },
 
     disabled: false,
-    numberOfLines: 1,
 
     data: [],
 
@@ -508,7 +507,7 @@ export default class Dropdown extends PureComponent {
       <TextField
         label=''
         labelHeight={dropdownOffset.top - Platform.select({ ios: 1, android: 2 })}
-
+        multiline={true}
         {...props}
 
         value={title}
@@ -584,7 +583,6 @@ export default class Dropdown extends PureComponent {
       rippleOpacity,
       rippleDuration,
       shadeOpacity,
-      numberOfLines,
     } = this.props;
 
     let props = propsExtractor(item, index);
@@ -632,7 +630,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <DropdownItem index={index} title={title} {...props}>
-        <Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={numberOfLines}>
+        <Text style={[styles.item, itemTextStyle, textStyle]} numberOfLines={5}>
           {title}
         </Text>
       </DropdownItem>
@@ -747,7 +745,7 @@ export default class Dropdown extends PureComponent {
             onResponderRelease={this.blur}
           >
             <View
-              style={[styles.picker, pickerStyle, pickerStyleOverrides]}
+              style={[styles.picker, pickerStyle, pickerStyleOverrides, {height: 400}]}
               onStartShouldSetResponder={() => true}
             >
               <FlatList
