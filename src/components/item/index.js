@@ -39,7 +39,7 @@ export default class DropdownItem extends PureComponent {
       <Button
         {...props}
 
-        style={[styles.container, style,  {height: 100}]}
+        style={[styles.container, style,  {height: 60}]}
         onPress={this.onPress}
       >
         {children}

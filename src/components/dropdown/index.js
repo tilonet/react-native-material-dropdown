@@ -745,7 +745,7 @@ export default class Dropdown extends PureComponent {
             onResponderRelease={this.blur}
           >
             <View
-              style={[styles.picker, pickerStyle, pickerStyleOverrides, {height: 400}]}
+              style={[styles.picker, pickerStyle, pickerStyleOverrides, {height: 250}]}
               onStartShouldSetResponder={() => true}
             >
               <FlatList
